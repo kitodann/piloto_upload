@@ -1,0 +1,6 @@
+SELECT * 
+FROM (SELECT id_parceiro, envia_notificacao_cotacao 
+	  FROM rede_parceiro_produto 
+	  WHERE id_parceiro='Assertif' AND id_produto='pet') 
+as a LEFT JOIN rede_parceiro ON a.id_parceiro=rede_parceiro.id_parceiro 
+WHERE rede_parceiro.ativo=true
